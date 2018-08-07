@@ -2,8 +2,12 @@ require 'docking_station'
 
 RSpec.describe DockingStation do
 
-  #it { expect(DockingStation.new).to respond_to(:release_bike) } this was my attempt
   it { is_expected.to respond_to :release_bike }
+
+  it "releases working bikes" do
+    bike = subject.release_bike
+    expect(bike).to be_working
+  end
 
 
 end
